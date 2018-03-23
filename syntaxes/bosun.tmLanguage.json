@@ -1,0 +1,128 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Bosun",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#expressions"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.bosun",
+					"match": "\\b(if|else|for|while)\\b"
+				},
+				{
+					"name": "storage.type.bosun",
+					"match": "\\b(alert|template|macro|notification)(?=\\s+.+{)"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "\\w+[^\\s]*(?=\\s*\\()"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "\\w+[^\\s]*(?=\\s*\\{)"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.bosun",
+					"match": "\\#.*"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.other",
+					"match": "\\$\\w+"
+				}
+			]
+		},
+		"stringcontent": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.bosun",
+					"match": "\\\\."
+				}
+			]
+		},
+		"expressions": {
+			"patterns": [
+				{
+					"name": "support.constant.bosun",
+					"begin": "{{",
+					"end": "}}",
+					"patterns": [
+						{
+							"name": "comment",
+							"match": ""
+						}
+					]
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric",
+					"match": "\\d+(\\.\\d)?"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.bosun",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"include": "#stringcontent"
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.bosun",
+					"begin": "`",
+					"end": "`",
+					"patterns": [
+						{
+							"include": "#stringcontent"
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.bosun",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"include": "#stringcontent"
+						}
+					]
+				}
+			]
+		}
+	},
+	"scopeName": "source.bosun"
+}

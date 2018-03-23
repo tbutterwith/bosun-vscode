@@ -1,0 +1,26 @@
+{
+    "name": "bosun",
+    "displayName": "Bosun",
+    "description": "Syntax highlighting for bosun expressions",
+    "version": "0.0.1",
+    "publisher": "tbutterwith",
+    "engines": {
+        "vscode": "^1.21.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "bosun",
+            "aliases": ["Bosun", "bosun"],
+            "extensions": [".conf"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "bosun",
+            "scopeName": "source.bosun",
+            "path": "./syntaxes/bosun.tmLanguage.json"
+        }]
+    }
+}
