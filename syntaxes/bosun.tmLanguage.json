@@ -26,19 +26,23 @@
 			"patterns": [
 				{
 					"name": "keyword.control.bosun",
-					"match": "\\b(if|else|for|while)\\b"
+					"match": "\\b(if|else|while|range|eq|index|end)\\b"
 				},
 				{
 					"name": "storage.type.bosun",
 					"match": "\\b(alert|template|macro|notification)(?=\\s+.+{)"
 				},
 				{
-					"name": "entity.name.function",
-					"match": "\\w+[^\\s]*(?=\\s*\\()"
+					"name": "keyword.operator.bosun",
+					"match": ">|&&|\\*|<"
 				},
 				{
 					"name": "entity.name.function",
-					"match": "\\w+[^\\s]*(?=\\s*\\{)"
+					"match": "\\w+[^\\s(]*(?=\\()"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "\\w+[^\\s]*(?=\\s*\\{[\\b|\\s])"
 				}
 			]
 		},
@@ -69,13 +73,32 @@
 		"expressions": {
 			"patterns": [
 				{
-					"name": "support.constant.bosun",
-					"begin": "{{",
-					"end": "}}",
+					"begin": "({{)",
+					"end": "(~?}})",
+					"name": "meta.function.block.end.bosun",
+					"endCaptures": {
+						"1": {
+							"name": "support.constant.bosun"
+						}
+					},
+					"beginCaptures": {
+						"1": {
+							"name": "support.constant.bosun"
+						}
+					},
 					"patterns": [
 						{
-							"name": "comment",
-							"match": ""
+							"include": "#keywords"
+						},
+						{
+							"include": "#numbers"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"name": "string.other",
+							"match": "(\\.\\w+)+"
 						}
 					]
 				}
@@ -85,7 +108,7 @@
 			"patterns": [
 				{
 					"name": "constant.numeric",
-					"match": "\\d+(\\.\\d)?"
+					"match": "\\b\\d+(\\.\\d)?\\b"
 				}
 			]
 		},
@@ -98,6 +121,9 @@
 					"patterns": [
 						{
 							"include": "#stringcontent"
+						},
+						{
+							"include": "#expressions"
 						}
 					]
 				},
@@ -108,6 +134,9 @@
 					"patterns": [
 						{
 							"include": "#stringcontent"
+						},
+						{
+							"include": "#expressions"
 						}
 					]
 				},
@@ -118,6 +147,9 @@
 					"patterns": [
 						{
 							"include": "#stringcontent"
+						},
+						{
+							"include": "#expressions"
 						}
 					]
 				}
