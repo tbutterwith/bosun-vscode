@@ -1,9 +1,13 @@
 {
     "name": "bosun",
     "displayName": "Bosun",
-    "description": "Syntax highlighting for bosun expressions",
-    "version": "0.0.1",
+    "description": "Language support for bosun expressions",
+    "version": "0.0.2",
     "publisher": "tbutterwith",
+    "icon": "icon.png",
+    "repository": {
+        "url": "https://github.com/tbutterwith/bosun-vscode"
+    },
     "engines": {
         "vscode": "^1.21.0"
     },
@@ -11,16 +15,25 @@
         "Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "bosun",
-            "aliases": ["Bosun", "bosun"],
-            "extensions": [".conf"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "bosun",
-            "scopeName": "source.bosun",
-            "path": "./syntaxes/bosun.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "bosun",
+                "aliases": [
+                    "Bosun",
+                    "bosun"
+                ],
+                "extensions": [
+                    ".conf"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "bosun",
+                "scopeName": "source.bosun",
+                "path": "./syntaxes/bosun.tmLanguage.json"
+            }
+        ]
     }
 }
