@@ -30,7 +30,7 @@
 				},
 				{
 					"name": "storage.type.bosun",
-					"match": "\\b(alert|template|macro|notification)(?=\\s+.+{)"
+					"match": "\\b(alert|template|macro|notification|lookup|entry)(?=\\s+.+{)"
 				},
 				{
 					"name": "keyword.operator.bosun",

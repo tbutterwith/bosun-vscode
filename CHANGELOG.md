@@ -1,7 +1,6 @@
 # Change Log
 All notable changes to the "bosun" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## 0.0.3 - 03 Apr 18
 
-## [Unreleased]
-- Initial release
+- added lookup and entry to the list of keywords
