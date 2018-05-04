@@ -12,7 +12,7 @@
         "vscode": "^1.21.0"
     },
     "categories": [
-        "Languages"
+        "Programming Languages"
     ],
     "activationEvents": [
         "*",
@@ -20,10 +20,52 @@
     ],
     "main": "./out/bosun",
     "contributes": {
+        "configuration": {
+            "title": "Bosun Plugin Configuration",
+            "properties": {
+                "bosun": {
+                    "type": "object",
+                    "properties": {
+                        "url": {
+                            "title": "Bosun Url",
+                            "Description": "Bosun instance url for validating configuration files",
+                            "type": "string",
+                            "pattern": "^https?://.+"
+                        },
+                        "openstdb": {
+                            "properties": {
+                                "url": {
+                                    "title": "OpenTSDB Url",
+                                    "description": "OpenTSDB Url for requesting metrics paths",
+                                    "type": "string",
+                                    "pattern": "^https?://.+"
+                                },
+                                "port": {
+                                    "title": "OpenTSDB Port",
+                                    "description": "OpenTSDB port number",
+                                    "type": "integer",
+                                    "default": 4242
+                                },
+                                "maxEntries": {
+                                    "title": "Max Entries",
+                                    "description": "The maximum number of OpenTSDB metrics paths to request from the API",
+                                    "type": "integer",
+                                    "default": 500
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "commands": [
             {
-                "command": "bosun.clearOpenTSDBCache",
+                "command": "bosun.clearOpentsdbCache",
                 "title": "Bosun: Clear OpenTSDB Cache"
+            },
+            {
+                "command": "bosun.validateBosun",
+                "title": "Bosun: Validate Bosun Configuration"
             }
         ],
         "languages": [
