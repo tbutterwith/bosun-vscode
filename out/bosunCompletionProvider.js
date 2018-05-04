@@ -16,7 +16,6 @@ class BosunCompletionProvider {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const query = getQueryString(document, position);
-                console.log(query);
                 if (query.length < 1) {
                     return new vscode_1.CompletionList([]);
                 }
@@ -29,7 +28,7 @@ class BosunCompletionProvider {
                 return response;
             }
             catch (err) {
-                console.log(err);
+                console.error(err);
                 return new vscode_1.CompletionList([]);
             }
         });
@@ -40,8 +39,9 @@ const clearCache = () => suggestionsCache = new Map();
 exports.clearCache = clearCache;
 const stripTypedString = (query, path) => {
     const remaining = path.slice(query.length);
-    if (remaining.indexOf('.') == -1)
+    if (remaining.indexOf('.') === -1) {
         return remaining;
+    }
     return remaining.substring(0, remaining.indexOf('.'));
 };
 const getQueryString = (document, position) => {

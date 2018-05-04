@@ -7,7 +7,6 @@ class BosunCompletionProvider implements CompletionItemProvider {
   public async provideCompletionItems(document: TextDocument, position: Position, token: CancellationToken, context: CompletionContext): Promise<CompletionList> {
     try {
       const query = getQueryString(document, position);
-      console.log(query);
       if (query.length < 1) { return new CompletionList([]); }
       if (suggestionsCache.has(query)) { return <any>suggestionsCache.get(query); }
 
@@ -18,7 +17,7 @@ class BosunCompletionProvider implements CompletionItemProvider {
 
       return response;
     } catch (err) {
-      console.log(err);
+      console.error(err);
       return new CompletionList([]);
     }
   }
@@ -31,7 +30,7 @@ export { BosunCompletionProvider as default, clearCache };
 const stripTypedString = (query: string, path: string): string => {
   const remaining = path.slice(query.length);
 
-  if (remaining.indexOf('.') == -1) return remaining;
+  if (remaining.indexOf('.') === -1) { return remaining; }
   return remaining.substring(0, remaining.indexOf('.'));
 };
 
