@@ -14,6 +14,9 @@ A [Bosun](https://bosun.org/) language pack for Visual Studio Code featurng synt
 
 ## OpenTSDB Metric Path Completion
 
+![OpenTSDB metric path autocomplete](images/auto_complete.gif)\
+
+
 ### Configuration
 
 The settings for OpenTSDB metric path completion are configured per workspace, allowing you to have a different OpenTSDB set up for each bosun project. The following configuration parameters are available:
@@ -22,17 +25,29 @@ The settings for OpenTSDB metric path completion are configured per workspace, a
 {
     "bosun": {
         "openTsdb": {
-            "url": "<the url of your OpenTSDB api>", // should be included without the protocol
+            "url": "<the url of your OpenTSDB api>",
             "port": 4242 // the port your OpenTSDB api is accessible on - default 4242
             "maxEntries": 500 // the number of metrics paths to fetch in the request - default 500
         }
+        ...
     }
 }
 ```
 
-### Example
+## Bosun Configuration Validation
 
-![OpenTSDB metric path autocomplete](images/auto_complete.gif)\
+This package provides access to the Bosun configuration testing api if provided with a url to a running instance of Bosun. The command can be found in the command palette `⌘ + ⇧ + P` and selecting `Bosun: Validate Bosun Configuration`.
+
+To configure this command, add the bosun url to your config:
+
+```js
+{
+    "bosun": {
+        "url": "<the url of your bosun instance>"
+        ...
+    }
+}
+```
 
 ## FAQ
 
