@@ -2,7 +2,7 @@
     "name": "bosun",
     "displayName": "Bosun",
     "description": "Language support for bosun expressions",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "publisher": "tbutterwith",
     "icon": "icon.png",
     "repository": {
@@ -32,7 +32,7 @@
                             "type": "string",
                             "pattern": "^https?://.+"
                         },
-                        "openstdb": {
+                        "openTsdb": {
                             "properties": {
                                 "url": {
                                     "title": "OpenTSDB Url",
