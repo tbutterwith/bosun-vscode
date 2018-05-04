@@ -1,7 +1,8 @@
 # Change Log
+
 All notable changes to the "bosun" extension will be documented in this file.
 
-## 0.2.0 - 04 May 18
+## 0.2.1 - 04 May 18
 
 ### Major
 

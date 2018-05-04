@@ -18,7 +18,7 @@ const getMetricsPaths = (query) => __awaiter(this, void 0, void 0, function* () 
     const port = vscode_1.workspace.getConfiguration('bosun.openTsdb').get('port', 4242);
     const maxEntries = vscode_1.workspace.getConfiguration('bosun.openTsdb').get('maxEntries', 500);
     const res = yield request({
-        url: `{url}:${port}/suggest?type=metrics&q=${query}&max=${maxEntries}`,
+        url: `${url}:${port}/suggest?type=metrics&q=${query}&max=${maxEntries}`,
         headers: { 'User-Agent': 'node-requests/2.85 (Bosun VSCode Plugin)' }
     });
     return JSON.parse(res);
