@@ -2,7 +2,7 @@
     "name": "bosun",
     "displayName": "Bosun",
     "description": "Language support for bosun expressions",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "publisher": "tbutterwith",
     "icon": "icon.png",
     "repository": {
