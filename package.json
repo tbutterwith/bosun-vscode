@@ -61,11 +61,13 @@
         "commands": [
             {
                 "command": "bosun.clearOpentsdbCache",
-                "title": "Bosun: Clear OpenTSDB Cache"
+                "title": "Clear OpenTSDB Cache",
+                "category": "Bosun"
             },
             {
                 "command": "bosun.validateBosun",
-                "title": "Bosun: Validate Bosun Configuration"
+                "title": "Validate Bosun Configuration",
+                "category": "Bosun"
             }
         ],
         "languages": [
