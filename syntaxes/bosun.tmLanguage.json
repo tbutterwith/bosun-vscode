@@ -142,8 +142,8 @@
 				},
 				{
 					"name": "string.quoted.single.bosun",
-					"begin": "'",
-					"end": "'",
+					"begin": "(?:\b)'",
+					"end": "'(?:\b)",
 					"patterns": [
 						{
 							"include": "#stringcontent"
