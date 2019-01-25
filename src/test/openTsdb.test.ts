@@ -11,10 +11,10 @@ describe('openTsdb', () => {
   beforeEach(() => {
     nock.disableNetConnect();
     const configMock = sinon.stub();
-    configMock.withArgs('url').returns('testing');
+    configMock.withArgs('url').returns('http://testing');
     configMock.withArgs('port', 4242).returns(4242);
     configMock.withArgs('maxEntries', 500).returns(500);
-    sandbox.stub(vscode.workspace, 'getConfiguration').withArgs('bosun.openTsdb').returns({ get: configMock });
+    sandbox.stub(vscode.workspace, 'getConfiguration').withArgs('bosun.openTsdb').returns({ get: configMock, has: sinon.stub(), inspect: sinon.stub(), update: sinon.stub() });
   });
 
   afterEach(() => {
