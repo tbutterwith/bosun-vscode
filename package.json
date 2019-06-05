@@ -100,8 +100,7 @@
     },
     "dependencies": {
         "request": "^2.88.0",
-        "request-promise-native": "^1.0.5",
-        "vscode": "^1.1.28"
+        "request-promise-native": "^1.0.5"
     },
     "devDependencies": {
         "@types/mocha": "^5.2.5",
@@ -111,6 +110,7 @@
         "nock": "^10.0.6",
         "sinon": "^7.2.3",
         "tslint": "^5.12.1",
-        "typescript": "^3.2.4"
+        "typescript": "^3.2.4",
+        "vscode": "^1.1.28"
     }
 }
