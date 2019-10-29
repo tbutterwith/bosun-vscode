@@ -2,6 +2,11 @@
 
 All notable changes to the "bosun" extension will be documented in this file.
 
+## 1.0.0 - 29th Oct 19
+
+- Update packages to remove security vulnerabilities
+- Finally deploy a stable version
+
 ## 0.2.4 - 20 Jun 18
 
 - Namespace commands correctly
