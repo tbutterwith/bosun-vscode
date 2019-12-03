@@ -2,6 +2,10 @@
 
 All notable changes to the "bosun" extension will be documented in this file.
 
+## 1.0.1 - 3rd Dec 19
+
+- Include 'replace' in highlighted keywords
+
 ## 1.0.0 - 29th Oct 19
 
 - Update packages to remove security vulnerabilities

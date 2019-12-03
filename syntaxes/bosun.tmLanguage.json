@@ -26,7 +26,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.bosun",
-					"match": "\\b(if|else|while|range|eq|index|end)\\b"
+					"match": "\\b(if|else|while|range|eq|index|end|replace)\\b"
 				},
 				{
 					"name": "storage.type.bosun",
