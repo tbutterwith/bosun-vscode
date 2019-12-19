@@ -22,14 +22,27 @@ const validate = () => __awaiter(this, void 0, void 0, function* () {
             url: `${url}/api/config_test`,
             body: config
         });
-        if (res.length > 0) {
-            throw new Error(res);
+        if (res.length === 0) {
+            vscode_1.window.showInformationMessage('Bosun configuration is valid');
+            return;
         }
-        vscode_1.window.showInformationMessage('Bosun configuration is valid');
+        const responseArray = res.split(':');
+        const errorLine = parseInt(responseArray[4]) - 1;
+        const message = responseArray[5];
+        vscode_1.window.showErrorMessage(`Bosun configuration is invalid: ${message}`, `Go to line ${errorLine}`)
+            .then((action) => {
+            if (!action) {
+                return;
+            }
+            if (vscode_1.window.activeTextEditor) {
+                vscode_1.window.activeTextEditor.selections = [new vscode_1.Selection(new vscode_1.Position(errorLine - 1, 0), new vscode_1.Position(errorLine - 1, 0))];
+                vscode_1.window.activeTextEditor.revealRange(new vscode_1.Range(errorLine - 1, 0, errorLine - 1, 0), 1);
+            }
+        });
     }
     catch (err) {
-        vscode_1.window.showErrorMessage('Bosun configuration is invalid', err.message);
         console.error(err);
+        vscode_1.window.showErrorMessage('Error fetching Bosun response');
     }
 });
 exports.validate = validate;

@@ -1,5 +1,5 @@
 'use strict';
-import { window, workspace } from 'vscode';
+import { window, workspace, Selection, Position, Range } from 'vscode';
 const request = require('request-promise-native');
 
 const validate = async () => {
@@ -12,11 +12,28 @@ const validate = async () => {
       url: `${url}/api/config_test`,
       body: config
     });
-    if (res.length > 0) { throw new Error(res); }
-    window.showInformationMessage('Bosun configuration is valid');
+    if (res.length === 0) { 
+      window.showInformationMessage('Bosun configuration is valid');
+      return;
+    }
+
+    const responseArray = res.split(':');
+    const errorLine = parseInt(responseArray[4]) - 1;
+    const message = responseArray[5];
+
+    window.showErrorMessage(`Bosun configuration is invalid: ${message}`, `Go to line ${errorLine}`)
+      .then((action) => {
+        if (!action) { return; }
+
+        if(window.activeTextEditor) {
+          window.activeTextEditor.selections = [new Selection(new Position(errorLine-1, 0), new Position(errorLine-1, 0))]
+          window.activeTextEditor.revealRange(new Range(errorLine-1, 0, errorLine-1, 0), 1)
+          ;
+        }
+      });
   } catch (err) {
-    window.showErrorMessage('Bosun configuration is invalid', err.message);
     console.error(err);
+    window.showErrorMessage('Error fetching Bosun response')
   }
 };
 
