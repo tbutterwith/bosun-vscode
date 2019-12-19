@@ -2,6 +2,11 @@
 
 All notable changes to the "bosun" extension will be documented in this file.
 
+## 1.1.0 - 19th Dec 19
+
+- Jump to line on configuration parsing errors.
+  - If an error is found while parsing a configuration file, the popup provides the option to jump to the incorrect line.
+
 ## 1.0.1 - 3rd Dec 19
 
 - Include 'replace' in highlighted keywords

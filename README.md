@@ -36,7 +36,7 @@ The settings for OpenTSDB metric path completion are configured per workspace, a
 
 ## Bosun Configuration Validation
 
-This package provides access to the Bosun configuration testing api if provided with a url to a running instance of Bosun. The command can be found in the command palette `⌘ + ⇧ + P` and selecting `Bosun: Validate Bosun Configuration`.
+This package provides access to the Bosun configuration testing api if provided with a url to a running instance of Bosun. The command can be found in the command palette `⌘ + ⇧ + P` and selecting `Bosun: Validate Bosun Configuration`. If there is an error in your config, the extensions provides an option to jump to the line with the error.
 
 To configure this command, add the bosun url to your config:
 
