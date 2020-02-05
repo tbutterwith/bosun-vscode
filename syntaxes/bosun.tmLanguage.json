@@ -50,7 +50,7 @@
 			"patterns": [
 				{
 					"name": "comment.line.bosun",
-					"match": "\\#.*"
+					"match": "^\\s*\\#.*"
 				}
 			]
 		},

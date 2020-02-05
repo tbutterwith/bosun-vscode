@@ -18,8 +18,8 @@ const validate = async () => {
     }
 
     const responseArray = res.split(':');
-    const errorLine = parseInt(responseArray[4]) - 1;
-    const message = responseArray[5];
+    const errorLine = parseInt(responseArray[2]);
+    const message = responseArray.slice(5).join(':');
 
     window.showErrorMessage(`Bosun configuration is invalid: ${message}`, `Go to line ${errorLine}`)
       .then((action) => {
