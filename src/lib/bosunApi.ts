@@ -18,7 +18,7 @@ const validate = async () => {
     }
 
     const responseArray = res.split(':');
-    const errorLine = parseInt(responseArray[2]);
+    const errorLine = findLineErrorLineNumber(responseArray);
     const message = responseArray.slice(5).join(':');
 
     window.showErrorMessage(`Bosun configuration is invalid: ${message}`, `Go to line ${errorLine}`)
@@ -36,5 +36,12 @@ const validate = async () => {
     window.showErrorMessage('Error fetching Bosun response')
   }
 };
+
+const findLineErrorLineNumber = (response: Array<string>) => {
+  const indexTwo = parseInt(response[2]);
+  if (Number.isNaN(indexTwo)) return parseInt(response[4]);
+
+  return indexTwo;
+}
 
 export { validate };
