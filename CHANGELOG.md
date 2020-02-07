@@ -2,7 +2,7 @@
 
 All notable changes to the "bosun" extension will be documented in this file.
 
-## 1.1.1 - 5th Feb 20
+## 1.1.2 - 5th Feb 20
 
 - FIX: Inline comments are not supported by Bosun. This drops the syntax highlighting for them
 - FIX: `config_test` endpoint returns different response formats for different errors. The plugin correctly parses all know exception types.
