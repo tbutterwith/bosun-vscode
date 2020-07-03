@@ -1,0 +1,22 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Publish
+      if: success()'
+      run: npm run deploy -- ${GITHUB_REF#refs/*/}
+      env:
+        VSCE_PAT: ${{ secrets.VSCE_PAT }}
+
