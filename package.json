@@ -97,7 +97,6 @@
         "deploy": "vsce publish --yarn",
         "test": "npm run compile && node ./node_modules/vscode/bin/test",
         "watch": "tsc -watch -p ./"
-
     },
     "dependencies": {
         "request": "^2.88.0",
