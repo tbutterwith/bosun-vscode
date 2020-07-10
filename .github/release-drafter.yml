@@ -9,6 +9,8 @@ categories:
   - title: '📚Dependency Updates'
     labels:
       - 'dependencies'
+exclude-labels:
+  - 'patch'
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
   ## What’s Changed
