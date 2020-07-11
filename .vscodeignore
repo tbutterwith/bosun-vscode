@@ -1,5 +1,13 @@
+.cache/**
+.github/**
 .vscode/**
 .vscode-test/**
+images/**
+node_modules/**
+out/**
+src/**
 .gitignore
-vsc-extension-quickstart.md
-out/test/**
+**/*.md
+snippet.conf
+tsconfig.json
+tslint.json
