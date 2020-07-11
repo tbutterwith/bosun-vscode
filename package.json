@@ -18,7 +18,7 @@
         "*",
         "onLanguage:bosun"
     ],
-    "main": "./dist/bosun.js",
+    "main": "./dist/bosun",
     "contributes": {
         "configuration": {
             "title": "Bosun Plugin Configuration",
@@ -92,12 +92,12 @@
         ]
     },
     "scripts": {
-        "vscode:prepublish": "npm run compile",
+        "vscode:prepublish": "webpack --mode production",
         "compile:tests": "tsc -p ./",
-        "compile": "parcel build ./src/bosun.ts -t node",
+        "compile": "webpack --mode development",
         "deploy": "vsce publish --yarn",
         "test": "npm run compile && node ./node_modules/vscode/bin/test",
-        "watch": "parcel watch -p src/bosun.ts"
+        "watch": "webpack --mode development --watch"
     },
     "dependencies": {
         "request": "^2.88.0",
@@ -109,11 +109,13 @@
         "@types/node": "^14.0.14",
         "@types/sinon": "^9.0.4",
         "nock": "^13.0.0",
-        "parcel": "^1.12.4",
         "sinon": "^9.0.2",
+        "ts-loader": "^8.0.0",
         "tslint": "^6.1.2",
         "typescript": "^3.9.5",
         "vsce": "^1.77.0",
-        "vscode": "^1.1.37"
+        "vscode": "^1.1.37",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.12"
     }
 }
