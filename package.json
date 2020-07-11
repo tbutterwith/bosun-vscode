@@ -18,7 +18,7 @@
         "*",
         "onLanguage:bosun"
     ],
-    "main": "./dist/bosun",
+    "main": "./dist/bosun.js",
     "contributes": {
         "configuration": {
             "title": "Bosun Plugin Configuration",
