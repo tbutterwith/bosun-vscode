@@ -6,7 +6,6 @@ A [Bosun](https://bosun.org/) language pack for Visual Studio Code featurng synt
 
 [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=tbutterwith.bosun)
 
-[Github](https://github.com/tbutterwith/bosun-vscode)
 
 ## Syntax Highlighting
 
