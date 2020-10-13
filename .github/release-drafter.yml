@@ -10,7 +10,7 @@ categories:
     labels:
       - 'dependencies'
 exclude-labels:
-  - 'patch'
+  - 'dependencies'
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 tag-template: 'draft-release-$NEXT_PATCH_VERSION'
 template: |
