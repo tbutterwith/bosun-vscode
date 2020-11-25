@@ -7,7 +7,6 @@ node_modules/**
 out/**
 src/**
 .gitignore
-**/*.md
 snippet.conf
 tsconfig.json
 tslint.json
