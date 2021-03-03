@@ -1,5 +1,8 @@
 # Bosun Language Support
 
+[![Version](https://vsmarketplacebadge.apphb.com/version/tbutterwith.bosun.svg)](https://marketplace.visualstudio.com/items?itemName=tbutterwith.bosun)
+[![Downloads](https://img.shields.io/vscode-marketplace/r/tbutterwith.bosun.svg)](https://marketplace.visualstudio.com/items?itemName=tbutterwith.bosun)
+
 ![Bosun logo](images/bosun_logo.png)
 
 A [Bosun](https://bosun.org/) language pack for Visual Studio Code featurng syntax highlighting and code snippets.
