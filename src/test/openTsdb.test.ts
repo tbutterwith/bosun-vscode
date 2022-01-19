@@ -46,7 +46,7 @@ describe('openTsdb', () => {
     try {
       await getMetricsPaths('test');
       assert.fail(0, 0, 'Expected exception to be thrown');
-    } catch (err) {
+    } catch (err: any) {
       assert.equal(err.message, '500 - "Internal server error"');
     }
     mock.done();
