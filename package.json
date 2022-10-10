@@ -107,7 +107,7 @@
         "@types/mocha": "^10.0.0",
         "@types/nock": "^11.1.0",
         "@types/node": "^18.8.2",
-        "@types/sinon": "^10.0.6",
+        "@types/sinon": "^10.0.13",
         "nock": "^13.2.9",
         "sinon": "^14.0.1",
         "ts-loader": "^9.4.1",
