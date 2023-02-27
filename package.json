@@ -106,7 +106,7 @@
     "devDependencies": {
         "@types/mocha": "^10.0.0",
         "@types/nock": "^11.1.0",
-        "@types/node": "^18.8.2",
+        "@types/node": "^18.14.2",
         "@types/sinon": "^10.0.6",
         "nock": "^13.2.9",
         "sinon": "^14.0.1",
